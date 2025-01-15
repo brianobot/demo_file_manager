@@ -101,7 +101,7 @@ fn remove_directory() -> Result<(), String> {
         return Err("Directory does not exist".to_string());
     }
 
-    let result = match fs::remove_dir(path) {
+    let result = match fs::remove_dir_all(path) {
         Ok(_) => Ok(()),
         Err(msg) => Err(msg.to_string())
     };
